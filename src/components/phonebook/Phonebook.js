@@ -3,7 +3,6 @@ import styles from "./Phonebook.module.css";
 
 class Phonebook extends Component {
   render() {
-    // console.log(this.props);
     return (
       <form onSubmit={this.props.onSubmit} style={{ marginLeft: "30px" }}>
         <h2>Phonebook</h2>
@@ -16,9 +15,9 @@ class Phonebook extends Component {
           onChange={this.props.onChange}
           placeholder="Enter name..."
           required
-        ></input>
-
-        <input
+           ></input>
+           
+           <input
           className={styles.inputNumber}
           type="tel"
           name="number"

@@ -1,5 +1,5 @@
 import React from "react";
-import OneContact from "../oneContact/OneContact";
+import Contact from "../Contact/Contact";
 import FilterContacts from "../filterContacts/FilterContacts";
 
 const ContactList = ({ contacts, filter, onChange, deleteContact }) => {
@@ -9,7 +9,7 @@ const ContactList = ({ contacts, filter, onChange, deleteContact }) => {
       <FilterContacts filter={filter} onChange={onChange} />
       <ul>
         {contacts.map((contact) => (
-          <OneContact
+          <Contact
             contact={contact}
             key={contact.id}
             deleteContact={deleteContact}

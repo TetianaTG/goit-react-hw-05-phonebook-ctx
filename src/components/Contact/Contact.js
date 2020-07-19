@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./OneContact.module.css";
+import styles from "./Contact.module.css";
 
-const OneContact = ({ contact: { id, name, number }, deleteContact }) => {
+const ContactItem = ({ contact: { id, name, number }, deleteContact }) => {
   return (
     <li>
       <span>{name}: </span>
@@ -17,4 +17,4 @@ const OneContact = ({ contact: { id, name, number }, deleteContact }) => {
   );
 };
 
-export default OneContact;
+export default ContactItem;

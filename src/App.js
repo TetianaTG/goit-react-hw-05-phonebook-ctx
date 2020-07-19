@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Phonebook from "./phonebook/Phonebook";
-import ContactList from "./contactList/ContactList";
+import Phonebook from "./components/phonebook/Phonebook";
+import ContactList from "./components/contactList/ContactList";
 import withTheme from "./hoc/withTheme";
 
 class App extends Component {
@@ -32,14 +32,13 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit");
-    console.log(this.state);
+    const{name,number,contacts} = this.state;
     const contact = {
       id: uuidv4(),
-      name: this.state.name,
-      number: this.state.number,
+      name: name,
+      number: number,
     };
-    this.state.contacts.find(
+    contacts.find(
       ({ name }) => name === contact.name && contact.name
     )
       ? alert(`${contact.name} already exists`)
@@ -53,7 +52,6 @@ class App extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     this.setState({ [name]: value });
   };
 
